@@ -44,20 +44,12 @@ What is the difference between chart junk and visual clutter? Explain briefly.
 
 ## Task 5 Distributions [Points: 2]
 Suppose you want to make a histogram visualization for arbitrary grayscale images (sample size n)
-larger than 1 megapixel with a bit depth of 8 (28 possible gray values). To choose the number of
+larger than 1 megapixel with a bit depth of 8 (255 possible gray values). To choose the number of
 bins (k), does any of the rules discussed in the lecture (square root rule, Sturge’s formula, Scott’s
 choice) apply here? Explain your choice briefly
 
-<!-- TODO: Argumentation --> 
-- Square Root Rule: Is Yes	This simple rule suggests using the square root of the sample size (n) for bin count. Given that the sample size is quite large (over 1 megapixel), this rule can help provide an initial estimate for bin count.
-Sturges’ Formula	Yes	Sturges’ formula calculates the number of bins as k=1+log2​(n). With a very large n, this formula may result in a relatively low number of bins that might be inadequate for distinguishing between the 256 gray values.
-Scott’s Choice	Yes	Scott's Choice provides a method for determining the bin width based on standard deviation and sample size, which can create a more adaptive binning suited for the dataset's characteristics. It can be particularly useful if the intensity distribution is not uniform.
-Explanation of Choice
+We alread have good buckets. With only 255 distinct greyscale values. We can just use these as buckets.
+In theory all of the rules discussed in the lecture can be applied. But whether they make sense is the question.
+For example the quare root rule doesnt really make sence because we loose a lot of information by only taking 16 buckets.
+In this use case it just doesnt really make sense to reduce the number of buckets at all.
 
-    Square Root Rule is useful for quickly estimating a reasonable number of bins when the primary aim is to visualize the data distribution without overcomplicating the representation.
-
-    Sturges’ Formula may not capture the nuances of high-resolution images effectively, as it tends to underestimate bin numbers in larger datasets. This might not adequately represent the full range of gray values.
-
-    Scott’s Choice allows for more tailored bin sizing based on the dataset itself, making it ideal when the variance of pixel intensities is possible. Since grayscale images often have significant variation in pixel intensity, this method can enhance the histogram's visual clarity.
-
-In conclusion, while all these rules can be applied, Scott's Choice may provide the most informative and adaptable approach for large grayscale images, ensuring the histogram captures the nuances of the intensities effectively.
