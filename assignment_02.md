@@ -53,3 +53,12 @@ In theory all of the rules discussed in the lecture can be applied. But whether 
 For example the quare root rule doesnt really make sence because we loose a lot of information by only taking 16 buckets.
 In this use case it just doesnt really make sense to reduce the number of buckets at all.
 
+
+## Task 6 Dot Matrix Chart [Impl] [Points: 10]
+### (f) (2 points) Visual Variables
+Name two visual variables that encode a Pokémon type and two visual variables that encode
+the quantity of Pokémon of a specific type.
+
+- The Pokemon type is encoded in the position on the field (first type) and the color (second type).
+- The quantity is encoded in the number of circles per space of a specific type.
+  And also by how many circles with the types color are on the whole field (secondary type).
