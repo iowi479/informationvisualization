@@ -32,6 +32,7 @@ Figure 2 below shows how students spend their time on average during three perio
 the start of semester, the exam period, and the summer break.
 In the lecture we discussed Gestalt Laws for pattern perception. The following requires you to make
 yourself familiar with the set of laws and to make use of them to achieve your goal.
+
 ### (a) (4 points) Name the Gestalt Laws you used and explain shortly why it helps to quickly identify the groupings.
 Through the use of two different Gestalt Laws, link together the bars which belong
 to the same period of the year (start of semester, exam period or summer break), AND the
@@ -48,6 +49,7 @@ groupings.
 ### (b) (2 points) Name a third Gestalt Law which you DID NOT use in part (a) and explain how it impacts our perception.
 - Law of Continuity: When seeing multiple entites, our Brain is assuming that these entities are constructed out of smooth shapes.
     It is unlikely, that the overlayed entities are contstructed out of weird shapes just to give the impression of another construction.
+
     Example Venn Diagram of two Sets.
     - Our Brain assumes that these are two overlapping circles.
     - But it could really be two partial circles(like a moon) with a cut out.
@@ -95,11 +97,12 @@ each machine in a factory, allowing to intervene quickly if a machine overheats.
 explain how you could exploit preattentive processing to monitor the temperatures and improve
 the performance of the task. Please upload your sketch as a PDF to ILIAS!
 
-- Color Coding: Use a color gradient from green (normal) to red (overheat) for temperature indicators. This gradient allows quick visual discrimination of temperature levels.
+- Color Coding: Use a color gradient from green (normal) over redish (above normal) to red (overheat) for temperature indicators. This gradient allows quick visual discrimination of temperature levels.
 - Dynamic Visual Alerts: Incorporate flashing or pulsating effects for machines that exceed safe temperature thresholds, creating immediate visual alerts.
 
 
 ## Task 4 Change Blindness Test Impl [Points: 7]
+
 ### (d) (1 points) Explain the potential problem if you were to use the frameCount instead of the deltaTime to switch between the different scenes?
 The frame time might differ depending on the performance of the device running the code.
 Therefore using frameCount could lead to inconsistent timing for scene changes across different devices.
