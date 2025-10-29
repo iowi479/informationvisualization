@@ -99,4 +99,8 @@ the performance of the task. Please upload your sketch as a PDF to ILIAS!
 - Dynamic Visual Alerts: Incorporate flashing or pulsating effects for machines that exceed safe temperature thresholds, creating immediate visual alerts.
 
 
-
+## Task 4 Change Blindness Test Impl [Points: 7]
+### (d) (1 points) Explain the potential problem if you were to use the frameCount instead of the deltaTime to switch between the different scenes?
+The frame time might differ depending on the performance of the device running the code.
+Therefore using frameCount could lead to inconsistent timing for scene changes across different devices.
+Or even changes in speed depending on the current load of the device.

@@ -25,8 +25,8 @@ const barTime = 2000;
 function getTutorialInfo() {
     return {
         exerciseNum: 3,  // make sure that this is the right number of the current exercise
-        groupNames: "Jane Doe, Max Mustermann", // provide the names of each team member
-        isAnimated: false  // if set to true, shapes will be rendered continously
+        groupNames: "Simon Schindler", // provide the names of each team member
+        isAnimated: true  // if set to true, shapes will be rendered continously
     };
 }
 
@@ -37,8 +37,8 @@ function getTutorialInfo() {
  * @returns an integer
  */
 function randomInt(min, maxExclusive) {
-
-    // TODO: insert code here
+    const range = maxExclusive - min;
+    return Math.floor(Math.random() * range) + min;
 }
 
 /**
@@ -70,6 +70,70 @@ function randomArray(len, min, maxExclusive) {
  * @param {Number} height - drawing area height
  */
 function draw(two, width, height) {
+    barWidth = (width - (barCount - 1) * barGap) / barCount;
+    const colors = getColorScale(barCount);
 
-    // TODO: insert code here
+    for (let i = 0; i < barCount; i++) {
+        const randomHeight = randomInt(10, height);
+        const bar = two.makeRectangle(
+            i * (barWidth + barGap) + barWidth / 2,
+            height - randomHeight / 2,
+            barWidth,
+            randomHeight
+        );
+        bar.fill = colors[i];
+        bar.noStroke();
+
+        BARS.push(bar);
+        HEIGHTS.push(randomHeight);
+    }
+
+    let timeElapsed = 0; // Elapsed time since switch to showing bars
+    let original = true; // Show original or deviant
+
+    deviantBar = randomInt(0, barCount);
+
+    two.bind("update", function(frameCount, timeDelta) {
+        timeElapsed += timeDelta;
+
+        // Check if we exceeded a phase duration
+        if (timeElapsed >= barTime + blankTime) {
+            timeElapsed = timeElapsed % (barTime + blankTime);
+            original = !original;
+        }
+
+
+
+        if (timeElapsed < barTime) {
+            // Show bars
+            for (let i = 0; i < barCount; i++) {
+                let targetHeight = HEIGHTS[i];
+                if (!original && i === deviantBar) {
+                    targetHeight = deviation;
+                }
+                BARS[i].height = targetHeight;
+                BARS[i].translation.y = height - targetHeight / 2;
+                BARS[i].opacity = 1;
+            }
+        } else if (timeElapsed < barTime + blankTime) {
+            // Show blank
+            for (let i = 0; i < barCount; i++) {
+                BARS[i].opacity = 0;
+                if (i === deviantBar) {
+                    // pretranslate height of deviant bar for smooth transition
+                    let targetHeight;
+                    if (original) {
+                        targetHeight = deviation;
+                    } else {
+                        targetHeight = BARS[i].height;
+                    }
+                    BARS[i].height = targetHeight;
+                    BARS[i].translation.y = height - targetHeight / 2;
+                }
+            }
+        }
+        else {
+            console.error("This should never happen!");
+        }
+    });
 }
