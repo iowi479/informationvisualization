@@ -3,6 +3,9 @@ name: Deploy static content to Pages
 on:
   push:
     branches: ["main"]
+    paths:
+      - './practical_*/**'  # practical tasks
+      - './index.html'    # index file
 
 
 jobs:
