@@ -26,6 +26,10 @@ This would make it easier to read the values of each bar.
 
 ## Task 2 Multivariate Data Plots [Points: 5]
 ### (b) (1 points) Which patterns can you observe in the SPLOM in Figure 2?
+Between D and A we could argue there is a negative correlation between blue and dark red.
+Between A and B we can observe a positive correlation because the lines are near parallel.
+Between B and C we can observe a negative correlation because the lines cross each other.
+
 
 
 ### (c) (1 points) Name an advantage of a SPLOM over a PCP visualization, and an advantage of a PCP over SPLOM.
