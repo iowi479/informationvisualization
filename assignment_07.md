@@ -13,6 +13,25 @@
     Or we had to make the small values not really visible but therefore we could see the big picture of the whole data better.
     With interaction a user could zoom in and out so see only subsets of the data at a time and this will be better scaled.
 
+Limitations listet in VL.
+Es gibt verschiedene von denen wir hätten wählen müssen.
+- Spacial display limitations
+    - Zoom
+    - Panning
+- Temporal display limitations
+    - Filter
+    - Scrolling
+- Perceptual limitations
+    - ...
+- Cognitive limitations
+    - highlighting
+    - show history of action
+- Computational limitations
+    - too expensive
+    - preprocessing
+    - only subsections
+
+
 
 ## Task 2 Interaction Techniques and Categories [Points: 4]
 ### (a) (2 points) Describe the difference between “overview+detail” and “focus+context”.
@@ -37,9 +56,13 @@ Give a brief explanation of why you chose that category.
     - Select: The user is actively selecting a region of interest and the chart is zoomed in.
         The user seelected a area of interest to focus on.
 
+        Should be abstract/elaborate because we get more details of the selected area.
+
 - Interaction 2: After zooming in, the user clicks on the hand button and pans the chart to the left by dragging the scene with the mouse pointer (see Figure 1, right)
     - Explore: The user is exploring different parts of the data by panning around.
         Only a part is shown because the dataset is too large to fit on the screen reasonably.
+        Panning doesnt change the scale.
+        WE dont change representation
 
 
 ## Task 3 k-D Tree [Points: 6]
@@ -47,6 +70,9 @@ Given the following dataset: {(3,4), (9,3), (8,7), (2,3), (4,7), (7,8)}
 
 ### (a) (3 points) Sketch a homogeneous 2-D tree. Make sure to find an insertion order that leads to a balanced tree3 (reminder: on even levels you consider the x position, on odd levels the y position, starting with level 0).
 -> (7,8), (4,7), (9,3), (2,3), (3,4), (8,7)
+
+
+Sort and take median
 
 
 ### (c) (1 points) Briefly explain the type of problem that might occur when arbitrary insertion orders are used to build k-D Trees. What is the impact?
