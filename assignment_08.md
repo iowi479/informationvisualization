@@ -2,6 +2,7 @@
 # Assignment 8
 
 ## Task 1 Principal Component Analysis (PCA) [Points: 3]
+a) second principal component has to be also through the mean which is in the center of the two clusters.
 
 ### (b) (1 points) Assume that the points of the scatter plot in Figure 1 are projected onto the second principal component to achieve a dimensionality reduction into one-dimensional space. Which problem occurs in this specific case?
 If we project onto the second principal component we lose all information about the two clusters. Since we project them onto a line which is orthogonal to the direction that separates them, they will overlap completely in the one-dimensional space.
