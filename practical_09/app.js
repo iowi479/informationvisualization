@@ -10,7 +10,7 @@ function getTutorialInfo() {
 
 function draw(two) {
     //TODO (b): Play around with different values of k
-    const k = 5;
+    const k = 6;
     //-------------
     const colors = getTenDistinctColors();
     const data = getData().dataEx9;
